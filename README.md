@@ -50,8 +50,6 @@ It connects people who want to get rid of items in good condition with those who
 
 ---
 
-## Installation and Usage
-1. **Clone the repository**
-```bash
-git clone https://github.com/yourusername/ONCE-AGAIN.git
+
+
 
