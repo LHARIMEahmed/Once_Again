@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/acceuil"
+    app:startDestination="@id/acceuil2">
+
+    <fragment
+        android:id="@+id/acceuil2"
+        android:name="com.example.myapplication.fragments.Acceuil.acceuil"
+        android:label="acceuil"
+        tools:layout="@layout/activity_list_objects">
+        <action
+            android:id="@+id/action_acceuil2_to_objetsDetails"
+            app:destination="@id/objetsDetails" />
+        <action
+            android:id="@+id/action_acceuil2_to_locationPicker"
+            app:destination="@id/locationPicker" />
+    </fragment>
+    <fragment
+        android:id="@+id/creer"
+        android:name="com.example.myapplication.fragments.Acceuil.creer"
+        android:label="creer"
+        tools:layout="@layout/create_activity">
+        <action
+            android:id="@+id/action_creer_to_locationPicker"
+            app:destination="@id/locationPicker" />
+        <argument
+            android:name="objet"
+            app:argType="com.example.myapplication.models.Objet"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="isEdit"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <action
+            android:id="@+id/action_creer_to_acceuil2"
+            app:destination="@id/acceuil2" />
+    </fragment>
+    <fragment
+        android:id="@+id/message2"
+        android:name="com.example.myapplication.fragments.Acceuil.message"
+        android:label="message"
+        tools:layout="@layout/message">
+        <action
+            android:id="@+id/action_message2_to_objetsDetails"
+            app:destination="@id/objetsDetails" />
+        <action
+            android:id="@+id/action_message2_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.myapplication.fragments.Profile.profile"
+        android:label="profile"
+        tools:layout="@layout/profile_activity">
+        <action
+            android:id="@+id/action_profile_to_editInfos"
+            app:destination="@id/editInfos" />
+        <action
+            android:id="@+id/action_profile_to_mesFavoris"
+            app:destination="@id/mesFavoris" />
+    </fragment>
+    <fragment
+        android:id="@+id/objetsDetails"
+        android:name="com.example.myapplication.fragments.Acceuil.details.objetsDetails"
+        android:label="objetsDetails"
+        tools:layout="@layout/fragment_details">
+        <argument
+            android:name="objet"
+            app:argType="com.example.myapplication.models.Objet"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_objetsDetails_to_DonneurInfos"
+            app:destination="@id/DonneurInfos" />
+        <action
+            android:id="@+id/action_objetsDetails_to_chatFragment"
+            app:destination="@id/chatFragment" />
+        <action
+            android:id="@+id/action_objetsDetails_to_creer"
+            app:destination="@id/creer" />
+        <action
+            android:id="@+id/action_objetsDetails_to_acceuil2"
+            app:destination="@id/acceuil2" />
+    </fragment>
+    <fragment
+        android:id="@+id/locationPicker"
+        android:name="com.example.myapplication.fragments.Acceuil.location.locationPicker"
+        android:label="locationPicker" />
+    <fragment
+        android:id="@+id/DonneurInfos"
+        android:name="com.example.myapplication.fragments.Acceuil.donneurInfos.DonneurInfos"
+        tools:layout="@layout/donneur_infos">
+        <argument
+            android:name="sellerId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.myapplication.fragments.Acceuil.chat.chatFragment"
+        android:label="chatFragment"
+        tools:layout="@layout/messaging_layout">
+        <argument
+            android:name="sellerId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/editInfos"
+        android:name="com.example.myapplication.fragments.Acceuil.details.editInfos"
+        android:label="editInfos" >
+        <argument
+            android:name="user"
+            app:argType="com.example.myapplication.models.user" />
+    </fragment>
+    <fragment
+        android:id="@+id/mesFavoris"
+        android:name="com.example.myapplication.fragments.Acceuil.details.mesFavoris"
+        android:label="mesFavoris" />
+
+</navigation>

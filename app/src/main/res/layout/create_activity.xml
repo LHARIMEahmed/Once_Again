@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/creerHeader"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <TextView
+            android:id="@+id/toolbarTitre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Creer Annonce"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_marginStart="15dp"
+            android:layout_centerVertical="true"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/grey"/>
+
+
+
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/imagesImport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/creerHeader"
+        android:layout_above="@+id/submitButton">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/txtcat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:text="Choisissez une catégorie"
+            android:layout_marginTop="20dp"/>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:id="@+id/DropDownCat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            app:startIconDrawable="@drawable/categorie"
+            android:hint="Catégorie"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/txtcat"
+            >
+
+            <AutoCompleteTextView
+                android:id="@+id/DropDownCate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:inputType="none"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/txttitreAn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="Titre de votre annonce"
+                android:layout_marginTop="20dp"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_below="@+id/DropDownCat"
+                />
+            <EditText
+                android:id="@+id/TitreAnnonce"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="20dp"
+                android:hint="Ex: livre etc ..."
+                android:background="@drawable/edit_text"
+                android:layout_below="@+id/txttitreAn"/>
+
+            <TextView
+                android:id="@+id/descAnnonce"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="Description de votre annonce"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_below="@+id/TitreAnnonce"
+                />
+            <EditText
+                android:id="@+id/descriptionObjet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                android:gravity="top"
+                android:minLines="2"
+                android:maxLines="10"
+                android:background="@drawable/edit_text"
+                android:scrollbars="vertical"
+                android:hint="Ex. Livre Harry Potter a recupperer le lundi a 11h, presque neuf etc ... "
+                android:layout_below="@+id/descAnnonce"/>
+
+            <TextView
+                android:id="@+id/textDispo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="Votre disponibilités"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_below="@+id/descriptionObjet"/>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:id="@+id/DropDownDispo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                app:startIconDrawable="@drawable/calendar"
+
+
+
+                android:layout_below="@+id/textDispo">
+
+                <AutoCompleteTextView
+                    android:id="@+id/DropDownDisponible"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:inputType="none"
+
+                    android:text="Disponibilités"
+                />
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:id="@+id/etatObjet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="Etat de votre objet"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_below="@+id/DropDownDispo"/>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:id="@+id/DropDownEtat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                app:startIconDrawable="@drawable/condition_ic"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/etatObjet">
+
+                <AutoCompleteTextView
+                    android:id="@+id/DropDownEtatO"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:inputType="none"
+                   android:text="Etat"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/textPhotos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="Ajoutez photos (max .4)"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_below="@+id/DropDownEtat"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/imagesRv"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="4"
+                android:layout_below="@+id/textPhotos"/>
+
+            <Button
+            android:id="@+id/importerPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:text="importer "
+            android:layout_below="@+id/imagesRv"/>
+
+            <AutoCompleteTextView
+                android:inputType="none"
+                android:id="@+id/locationTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Votre location"
+                android:background="@drawable/edit_text"
+                android:drawableTint="@color/grey"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="10dp"
+                android:padding="16dp"
+                android:drawableEnd="@drawable/local"
+                android:layout_below="@+id/importerPhoto"/>
+
+            <Button
+                android:id="@+id/getLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginTop="15dp"
+                android:text="Changer Location"
+                android:drawableLeft="@drawable/pin_ic"
+                android:drawableTint="@color/black"
+
+                android:layout_below="@+id/locationTextView"/>
+
+
+
+
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_custom"
+        android:backgroundTint="@color/darkBlue"
+        android:layout_alignParentBottom="true"
+        android:text="publier l'annonce"/>
+
+</RelativeLayout>
+
+

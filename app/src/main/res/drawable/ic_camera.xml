@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Background Layer -->
+    <item>
+        <bitmap android:drawable="@drawable/rounded_square_bg" />
+    </item>
+
+    <!-- Camera Icon Layer -->
+    <item android:gravity="center">
+        <bitmap android:drawable="@drawable/baseline_camera_enhance_24" />
+    </item>
+
+</layer-list>

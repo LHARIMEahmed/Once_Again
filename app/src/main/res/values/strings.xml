@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="create">create</string>
+    <string name="home">home</string>
+    <string name="message">message</string>
+    <string name="profile">profile</string>
+    <string name="google_play_services_version">AIzaSyDmx4rpIX1RKmYG_dB3eistlqH8BqkMlKo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

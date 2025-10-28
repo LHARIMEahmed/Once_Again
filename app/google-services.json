@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "769384251963",
+    "project_id": "once-again-5806e",
+    "storage_bucket": "once-again-5806e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:769384251963:android:51ae9c08793519b76c121e",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdLXO2Rxd2tUKx8aTWyxq7NJUTvalUEUE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

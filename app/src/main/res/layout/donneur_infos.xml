@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <ImageView
+            android:id="@+id/toolbar_backbttn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back_arrow"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/toolbar_backbttn"
+            android:text="Profile"
+            android:layout_marginStart="10dp"
+            style="@style/TextAppearance.AppCompat.Title"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/grey"/>
+    </RelativeLayout>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbarRl"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="10dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/sellerPP"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/profile"
+                android:background="@color/grey"
+                app:shapeAppearanceOverlay="@style/CircularImageView"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                />
+            <TextView
+                android:id="@+id/sellerName"
+                style="@style/TextAppearance.MaterialComponents.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@tools:sample/full_names"
+                android:layout_toEndOf="@id/sellerPP"
+                />
+            <TextView
+                android:id="@+id/membredepuis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:text="membre depuis: "
+                android:layout_below="@+id/sellerName"
+                android:layout_toEndOf="@id/sellerPP"/>
+            <TextView
+                android:id="@+id/dateMembre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:text="dd/mm/yyyy"
+                android:layout_below="@+id/sellerName"
+                android:layout_toEndOf="@id/membredepuis"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nbrTxtv"
+                android:layout_below="@+id/dateMembre"
+                android:layout_toEndOf="@+id/sellerPP"
+                android:text="Nombre d'annonces: "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nbrAnn"
+                android:text="0"
+                android:layout_below="@+id/dateMembre"
+                android:layout_toEndOf="@+id/nbrTxtv"/>
+        </RelativeLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+    <View
+        android:id="@+id/traitSepa"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        android:layout_below="@id/profile"/>
+    <TextView
+        android:id="@+id/annoncesPubliertitre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Autres Annonces:"
+        android:layout_below="@id/traitSepa"
+        style="@style/TextAppearance.AppCompat.Subhead"/>
+    
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/annoncesPublier"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/annoncesPubliertitre"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/objet_layout"/>
+
+
+</RelativeLayout>

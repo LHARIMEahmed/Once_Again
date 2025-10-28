@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <ImageView
+            android:id="@+id/toolbar_backbttn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/close_ic"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            />
+        <TextView
+            android:id="@+id/sellerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Nom Contact"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"/>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/sellerPP"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/profile"
+            android:background="@color/grey"
+            app:shapeAppearanceOverlay="@style/CircularImageView"
+            android:layout_marginEnd="10dp"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/sellerName"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/grey"/>
+    </RelativeLayout>
+    
+    
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewMsg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbarRl"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_above="@id/traitSepa"/>
+    
+    <View
+        android:id="@+id/traitSepa"
+        android:layout_above="@+id/chatInput"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey"/>
+    <RelativeLayout
+        android:id="@+id/chatInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="5dp">
+        <EditText
+            android:id="@+id/msgEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine|textCapSentences"
+            android:padding="16dp"
+            android:layout_toStartOf="@id/attachFile"
+            android:hint="Entrez message ..."
+            android:background="@drawable/shape_edit_text"/>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/attachFile"
+            android:layout_centerVertical="true"
+            android:src="@drawable/baseline_attach_file_24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/sendMsg"
+            app:fabSize="mini"
+            android:elevation="0dp"
+            />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/sendMsg"
+            android:layout_centerVertical="true"
+            android:src="@drawable/baseline_send_24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fabSize="auto"
+            android:elevation="0dp"
+            android:layout_alignParentEnd="true"
+            />
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

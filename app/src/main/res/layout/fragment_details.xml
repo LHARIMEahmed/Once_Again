@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/toolbarDT"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <ImageView
+            android:id="@+id/image_close"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/back_arrow"
+            android:background="@color/transparent"
+            android:layout_centerVertical="true"
+            android:padding="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/image_close"
+            android:layout_centerVertical="true"
+            android:text="Details"
+
+            style="@style/TextAppearance.AppCompat.Title"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"
+            android:layout_alignParentBottom="true"/>
+
+        <ImageView
+            android:id="@+id/share_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/grey"
+            android:src="@drawable/ic_share"
+            android:padding="8dp"
+            android:layout_alignParentEnd="true"
+            />
+        <ImageView
+            android:id="@+id/fave_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:tint="@color/grey"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/heart_ic"
+
+            android:padding="8dp"
+            android:layout_toStartOf="@+id/share_icon"
+            />
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/edit"
+            android:src="@drawable/baseline_mode_edit_24"
+            android:padding="8dp"
+            android:layout_toStartOf="@+id/fave_icon"
+            />
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/delete"
+            android:src="@drawable/delete_icon"
+            android:padding="8dp"
+            android:layout_toStartOf="@+id/edit"
+            />
+
+
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbarDT">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPagerImageObjet"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                />
+
+            <TextView
+                android:id="@+id/detailObjetNom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/viewPagerImageObjet"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textStyle="bold"
+                android:layout_marginStart="15dp"
+                android:text="Titre"
+                android:textSize="19sp"/>
+
+            <TextView
+                android:id="@+id/detailObjetCategorie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="3dp"
+                style="@style/TextAppearance.MaterialComponents.Headline5"
+                android:text="objet"
+                android:textSize="18sp"
+                android:layout_below="@id/detailObjetNom"/>
+            <TextView
+                android:id="@+id/descriptiontitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:text="Description"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_below="@id/detailObjetCategorie"/>
+            <TextView
+                android:id="@+id/detailObjetDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="10dp"
+                android:text="La description"
+                android:textSize="15sp"
+                android:layout_below="@id/descriptiontitle"/>
+            <TextView
+                android:id="@+id/rencontre_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Preference de rencontre"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="10dp"
+                android:textSize="18sp"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_below="@+id/detailObjetDescription"
+                />
+            <ImageView
+                android:id="@+id/calicon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/calendar"
+                android:layout_below="@+id/rencontre_text"/>
+            <TextView
+                android:id="@+id/dispo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rencontre_text"
+                android:layout_toEndOf="@id/calicon"
+                android:text="disp"
+                />
+            <ImageView
+                android:layout_marginTop="3dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/distance_icon"
+                android:layout_below="@+id/calicon"
+                android:src="@drawable/baseline_location_on_24"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"/>
+            <TextView
+                android:id="@+id/locationObj"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dispo"
+                android:layout_toEndOf="@+id/distance_icon"
+                android:text="local"
+                />
+            <View
+                android:id="@+id/viewSeparation"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/distance_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@id/bottompage"
+        android:background="@color/grey"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginTop="4dp"
+        android:id="@+id/bottompage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="2dp">
+        <com.google.android.material.card.MaterialCardView
+            app:layout_constraintTop_toTopOf="@id/bottompage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/button_contacter"
+            android:id="@+id/sellerCV"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            app:cardUseCompatPadding="true"
+            >
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/sellerPP"
+                    android:src="@drawable/profile"
+                    android:background="@color/grey"
+                    android:layout_marginEnd="10dp"
+                    app:shapeAppearanceOverlay="@style/CircularImageView"
+                    />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sellerName"
+                    tools:text="@tools:sample/full_names"
+                    android:layout_toEndOf="@+id/sellerPP"
+                    android:drawableEnd="@drawable/next_ic"
+                    android:layout_centerVertical="true"
+                    />
+
+
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            app:layout_constraintTop_toTopOf="@id/bottompage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/sellerCV"
+            android:id="@+id/button_contacter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_custom"
+            android:textSize="10sp"
+            android:text="contacter"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</RelativeLayout>

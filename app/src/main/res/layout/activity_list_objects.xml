@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/acceuilHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/search_bar_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="5dp"
+            app:cardUseCompatPadding="true">
+
+            <EditText
+                android:id="@+id/searchObject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Search"
+                android:drawableStart="@drawable/icon_search"
+                android:drawablePadding="10dp"
+                android:padding="18dp"
+                android:background="@android:color/transparent"/>
+
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+    </LinearLayout>
+
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/locationCv"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_width="match_parent"
+        android:layout_weight="@integer/google_play_services_version"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintTop_toBottomOf="@id/acceuilHeader"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="10dp">
+
+            <TextView
+                android:id="@+id/locationTv"
+                android:layout_width="match_parent"
+                style="@style/TextAppearance.MaterialComponents.Body1"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/local"
+                android:drawableEnd="@drawable/next_ic"
+                android:drawablePadding="10dp"
+                android:layout_marginTop="13dp"
+                android:text="Choose Location"
+                android:layout_centerVertical="true"/>
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/filterOptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/locationCv"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/distancefilter"
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/down_ic"
+            android:text="15 Km"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/categorieFilter"
+            android:layout_marginStart="10dp"
+            android:layout_width="0dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="5dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="10dp"
+            app:layout_constraintStart_toEndOf="@id/distancefilter"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/colorselected"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Categorie"
+                    android:layout_centerInParent="true"
+                    android:drawableEnd="@drawable/down_ic"
+                    android:layout_centerVertical="true"
+                    android:drawableTint="@color/grey"/>
+
+
+
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerMain"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/filterOptions"
+            />
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
