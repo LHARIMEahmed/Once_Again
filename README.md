@@ -6,15 +6,6 @@ It connects people who want to get rid of items in good condition with those who
 
 ---
 
-## Developed by
-- EL GUAREH Ayat-allah  
-- L’HARIME Ahmed  
-
-### Supervised by
-- Mr. Benamrane  
-
-### Academic Year
-- 2023/2024
 
 ---
 
@@ -63,3 +54,4 @@ It connects people who want to get rid of items in good condition with those who
 1. **Clone the repository**
 ```bash
 git clone https://github.com/yourusername/ONCE-AGAIN.git
+
