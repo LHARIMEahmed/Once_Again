@@ -42,13 +42,14 @@ It connects people who want to get rid of items in good condition with those who
 ---
 
 ## Tools and Technologies Used
-- **Language**: Kotlin / Java  
+- **Language**: Kotlin
 - **IDE**: Android Studio  
 - **Backend / Database**: Firebase (Authentication, Firestore, Storage)  
 - **Location**: Google Maps API  
 - **UI Components**: RecyclerView, ViewPager2, Material Components  
 
 ---
+
 
 
 
